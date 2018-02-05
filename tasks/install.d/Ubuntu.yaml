@@ -1,0 +1,15 @@
+---
+
+# task file for sentry.sentry
+
+- name: Ensure apt cache is up to date
+  apt:
+    update_cache: true
+
+
+- name: Install sentry dependencies
+  apt: name={{ item }} state=present update_cache=true
+  with_items: "{{ sentry_packages | default([]) }}"
+  when: sentry_packages is defined
+  tags:
+    - sentry
