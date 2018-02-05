@@ -8,7 +8,3 @@ _sentry:
   templates:
     - src: "sentry.sh.j2"
       dest: "{{ _sentry_file }}"
-
-_sentry_pip_dependences:
-  - name: sentry
-    version: 3.3.3

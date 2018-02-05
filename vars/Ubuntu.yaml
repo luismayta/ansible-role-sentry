@@ -13,7 +13,3 @@ _sentry_package_dependencies:
   - build-essential
   - git
   - curl
-
-_sentry_pip_dependences:
-  - name: sentry
-    version: 3.3.3

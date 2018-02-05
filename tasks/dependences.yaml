@@ -6,7 +6,9 @@
   become: true
   apt:
     update_cache: True
-  when: ansible_distribution == "Ubuntu"
+  when:
+    - ansible_distribution == "Ubuntu"
+    - sentry_update_package is defined
   tags:
     - apt
     - update_cache
