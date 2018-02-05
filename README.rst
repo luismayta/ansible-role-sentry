@@ -39,10 +39,11 @@ The default role variables in ``defaults/main.yml`` are:
 
 .. code-block:: yaml
 
-    opbeat_organization_id: ''
-    opbeat_app_id: ''
-    opbeat_secret_token: ''
-    opbeat_project_path: ''
+    sentry_organization: ''
+    sentry_token: ''
+    sentry_release_version: ''
+    sentry_environment: ''
+    sentry_deploy_name: ''
 
 - Deploy code
 
