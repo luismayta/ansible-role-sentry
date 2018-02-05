@@ -1,0 +1,10 @@
+---
+# task for sentry.sentry
+
+- name: Upgrade Release Version
+  become: true
+  become_user: "{{ user }}"
+  shell: ". {{ _sentry_file }}"
+  tags:
+    - sentry
+    - upgrade

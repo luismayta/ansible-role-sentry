@@ -1,0 +1,19 @@
+---
+# vars file for sentry.sentry (Ubuntu specific)
+
+_sentry_home_path: "/home/{{ user }}"
+_sentry_file: "{{_sentry_home_path}}/sentry.sh"
+
+_sentry:
+  templates:
+    - src: "sentry.sh.j2"
+      dest: "{{ _sentry_file }}"
+
+_sentry_package_dependencies:
+  - build-essential
+  - git
+  - curl
+
+_sentry_pip_dependences:
+  - name: sentry
+    version: 3.3.3

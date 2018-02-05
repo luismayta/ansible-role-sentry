@@ -1,0 +1,7 @@
+---
+# defaults file for labpositiva.sentry
+
+sentry_organization_id: ''
+sentry_app_id: ''
+sentry_secret_token: ''
+sentry_project_path: ''

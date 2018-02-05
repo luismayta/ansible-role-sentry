@@ -1,0 +1,38 @@
+---
+
+# task file for sentry.sentry
+
+- name: Update package repositories
+  become: true
+  apt:
+    update_cache: True
+  when: ansible_distribution == "Ubuntu"
+  tags:
+    - apt
+    - update_cache
+
+- name: Install sentry package dependencies
+  become: true
+  apt:
+    name: "{{ item }}"
+    state: present
+  register: install_sentry_package_dependencies
+  when: _sentry_package_dependencies is defined
+  with_items: "{{ _sentry_package_dependencies | default([]) }}"
+  tags:
+    - apt
+    - dependencies
+- debug: var=install_sentry_package_dependencies.stdout_lines
+
+- name: Install sentry dependencies
+  become: true
+  apt:
+    name: "{{ item.name }}"
+    state: present
+  register: install_sentry_dependencies
+  when: _sentry_dependencies is defined
+  with_items: "{{ _sentry_dependencies | default({}) }}"
+  tags:
+    - apt
+    - dependencies
+- debug: var=install_sentry_dependencies.stdout_lines
