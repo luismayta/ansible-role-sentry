@@ -1,0 +1,12 @@
+---
+# task for sentry.sentry
+
+- include: install.d/CentOS.yaml
+  when: ansible_distribution == "CentOS"
+  tags:
+    - sentry
+
+- include: install.d/Ubuntu.yaml
+  when: ansible_distribution == "Ubuntu"
+  tags:
+    - sentry

@@ -1,0 +1,11 @@
+---
+# environment file for sentry.sentry
+
+- name: Create files sentry
+  become: true
+  file:
+    path: "{{ item.path }}"
+    state: "{{ item.state }}"
+    owner: "{{ item.owner }}"
+  with_items: "{{ _sentry_create_files | default({}) }}"
+  when: _sentry_create_files is defined

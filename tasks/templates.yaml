@@ -1,0 +1,9 @@
+---
+# task file for sentry.sentry
+
+- name: copy templates
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  with_items: "{{ _sentry.templates | default({}) }}"
+  when: _sentry.templates is defined

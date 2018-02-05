@@ -1,0 +1,9 @@
+---
+# defaults file for hadenlabs.sentry
+
+sentry_organization: ''
+sentry_release_version: ''
+sentry_token: ''
+sentry_environment: ''
+sentry_deploy_name: ''
+sentry_project_path: ''

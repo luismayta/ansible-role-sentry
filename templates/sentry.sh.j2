@@ -1,0 +1,15 @@
+#!/bin/bash
+
+cd {{ sentry_project_path }}
+
+# Create a new deploy
+curl https://sentry.io/api/0/organizations/{{ sentry_organizaion }}/releases/{{ sentry_release_version }}/deploys/ \
+     -X POST \
+     -H 'Authorization: Bearer {{ sentry_token }}' \
+     -H 'Content-Type: application/json' \
+     -d '
+  {
+    "environment": "{{ sentry_environment }}",
+    "name": "{{ sentry_deploy_name }}"
+  }
+'
