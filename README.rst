@@ -4,9 +4,9 @@ Ansible Role Sentry
 |Build Status| |Ansible Galaxy| |GitHub issues| |Average time to resolve an issue| |Percentage of issues still open| |GitHub license|
 
 :Version: 0.1.0
-:Web: https://github.com/hadenlabs/ansible-role-sentry
-:Download: http://github.com/hadenlabs/ansible-role-sentry
-:Source: http://github.com/hadenlabs/ansible-role-sentry
+:Web: https://github.com/okchaty/ansible-role-sentry
+:Download: http://github.com/okchaty/ansible-role-sentry
+:Source: http://github.com/okchaty/ansible-role-sentry
 :Keywords: ansible-role-sentry
 
 .. contents:: Table of Contents:
@@ -30,7 +30,7 @@ Install it with the following command:
 
 .. code-block:: bash
 
-    $ ansible-galaxy install hadenlabs.sentry
+    $ ansible-galaxy install okchaty.sentry
 
 Role Variables
 ==============
@@ -49,7 +49,7 @@ The default role variables in ``defaults/main.yml`` are:
 
 .. code-block:: yaml
 
-    - role: hadenlabs.sentry
+    - role: okchaty.sentry
 
 Dependencies
 ============
@@ -82,16 +82,16 @@ Made with :heart: :coffee: and :pizza: by `author`_ and `company`_.
 
 .. Badges:
 
-.. |Build Status| image:: https://travis-ci.org/hadenlabs/ansible-role-sentry.svg
-   :target: https://travis-ci.org/hadenlabs/ansible-role-sentry
-.. |Ansible Galaxy| image:: https://img.shields.io/badge/galaxy-hadenlabs.python-blue.svg
-   :target: https://galaxy.ansible.com/hadenlabs/ansible-role-sentry/
-.. |GitHub issues| image:: https://img.shields.io/github/issues/hadenlabs/ansible-role-sentry.svg
-   :target: https://github.com/hadenlabs/ansible-role-sentry/issues
-.. |Average time to resolve an issue| image:: http://isitmaintained.com/badge/resolution/hadenlabs/ansible-role-sentry.svg
-   :target: http://isitmaintained.com/project/hadenlabs/ansible-role-sentry
-.. |Percentage of issues still open| image:: http://isitmaintained.com/badge/open/hadenlabs/ansible-role-sentry.svg
-   :target: http://isitmaintained.com/project/hadenlabs/ansible-role-sentry
+.. |Build Status| image:: https://travis-ci.org/okchaty/ansible-role-sentry.svg
+   :target: https://travis-ci.org/okchaty/ansible-role-sentry
+.. |Ansible Galaxy| image:: https://img.shields.io/badge/galaxy-okchaty.python-blue.svg
+   :target: https://galaxy.ansible.com/okchaty/ansible-role-sentry/
+.. |GitHub issues| image:: https://img.shields.io/github/issues/okchaty/ansible-role-sentry.svg
+   :target: https://github.com/okchaty/ansible-role-sentry/issues
+.. |Average time to resolve an issue| image:: http://isitmaintained.com/badge/resolution/okchaty/ansible-role-sentry.svg
+   :target: http://isitmaintained.com/project/okchaty/ansible-role-sentry
+.. |Percentage of issues still open| image:: http://isitmaintained.com/badge/open/okchaty/ansible-role-sentry.svg
+   :target: http://isitmaintained.com/project/okchaty/ansible-role-sentry
 .. |GitHub license| image:: https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square
    :target: LICENSE
 
@@ -100,7 +100,7 @@ Made with :heart: :coffee: and :pizza: by `author`_ and `company`_.
 .. _`contributors`: AUTHORS
 .. _`contributing`: CONTRIBUTING.rst
 
-.. _`company`: https://github.com/hadenlabs
+.. _`company`: https://github.com/okchaty
 .. _`author`: https://github.com/luismayta
 
 .. dependences
