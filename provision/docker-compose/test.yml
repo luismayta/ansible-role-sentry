@@ -7,7 +7,7 @@ services:
 
   web:
     restart: always
-    image: python:3.6.1
+    image: ansible-role-sentry
     environment: &environment
       - DEBUG=True
     build:
