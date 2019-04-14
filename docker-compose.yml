@@ -5,14 +5,14 @@
 version: '3'
 services:
 
-  web:
+  app:
     restart: always
     image: ansible-role-sentry
     environment: &environment
       - ENVIRONMENT=local
     build:
       context: .
-      dockerfile: provision/docker/web/Dockerfile
+      dockerfile: provision/docker/app/Dockerfile
     volumes:
       - .:/usr/src
     env_file:
