@@ -13,3 +13,4 @@ _sentry_package_dependencies:
   - build-essential
   - git
   - curl
+  - vim
