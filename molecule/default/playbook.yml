@@ -2,7 +2,15 @@
 
 - name: Converge
   vars:
-    user: "ubuntu"
+    user: "root"
+    sentry_organization: 'ok-chaty'
+    sentry_release_version: ''
+    sentry_token: 'my-token'
+    sentry_environment: ''
+    sentry_deploy_name: ''
+    sentry_project_path: "/home/"
+    sentry_project: 'project'
+    sentry_home_path: "/home/"
   hosts: all
   roles:
     - role: ansible-role-sentry
