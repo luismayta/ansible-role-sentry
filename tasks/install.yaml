@@ -1,12 +1,9 @@
 ---
 # task for sentry.sentry
 
-- include: install.d/CentOS.yaml
-  when: ansible_distribution == "CentOS"
-  tags:
-    - sentry
-
-- include: install.d/Ubuntu.yaml
-  when: ansible_distribution == "Ubuntu"
+- name: Install sentry dependencies
+  package: name={{ item }} state=present
+  with_items: "{{ sentry_packages | default([]) }}"
+  when: sentry_packages is defined
   tags:
     - sentry
