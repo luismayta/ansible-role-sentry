@@ -6,7 +6,7 @@ OS := $(shell uname)
 .PHONY: help
 .DEFAULT_GOAL := help
 
-PROJECT := chatydelivery-infraestructure
+PROJECT := ansible-role-sentry
 
 PYTHON_VERSION=3.6.5
 PYENV_NAME="${PROJECT}"
