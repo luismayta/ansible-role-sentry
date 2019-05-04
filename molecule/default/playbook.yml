@@ -1,0 +1,8 @@
+---
+
+- name: Converge
+  vars:
+    user: "ubuntu"
+  hosts: all
+  roles:
+    - role: ansible-role-sentry
