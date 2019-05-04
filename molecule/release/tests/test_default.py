@@ -2,6 +2,7 @@
 import os
 
 import testinfra.utils.ansible_runner
+from hamcrest import assert_that, equal_to
 
 testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
     os.environ['MOLECULE_INVENTORY_FILE'],
@@ -9,8 +10,7 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 
 
 def test_hosts_file(host):
-    f = host.file('/etc/hosts')
-
-    assert f.exists
-    assert f.user == 'root'
-    assert f.group == 'root'
+    exe = host.file('/etc/hosts')
+    assert_that(exe.exists, equal_to(True))
+    assert_that(exe.user, equal_to('root'))
+    assert_that(exe.goup, equal_to('root'))
