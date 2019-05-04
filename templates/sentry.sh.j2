@@ -1,20 +1,20 @@
 #!/bin/bash
 
 cd {{ sentry_project_path }}
-VERSION=`git log -n 1 --pretty=format:%H`
+export VERSION=`git log -n 1 --pretty=format:%H`
 
 curl https://sentry.io/api/0/organizations/{{ sentry_organization }}/releases/ \
      -X POST \
-     -H 'Authorization: Bearer {{ sentry_token }} \
+     -H 'Authorization: Bearer {{ sentry_token }}' \
      -H 'Content-Type: application/json' \
      -d '{
-    "version": "$VERSION",
-    "projects": ["{{ sentry_project }}"]
+        "version": "${VERSION}",
+        "projects": ["{{ sentry_project }}"]
 }'
 
-curl https://sentry.io/api/0/organizations/{{ sentry_organization }}/releases/$VERSION/deploys/ \
+curl https://sentry.io/api/0/organizations/{{ sentry_organization }}/releases/${VERSION}/deploys/ \
      -X POST \
-     -H 'Authorization: Bearer {{ sentry_token }} \
+     -H 'Authorization: Bearer {{ sentry_token }}' \
      -H 'Content-Type: application/json' \
      -d '{
     "environment": "{{ sentry_environment }}"
