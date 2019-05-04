@@ -1,15 +1,21 @@
 #!/bin/bash
 
 cd {{ sentry_project_path }}
+VERSION=`git log -n 1 --pretty=format:%H`
 
-# Create a new deploy
-curl https://sentry.io/api/0/organizations/{{ sentry_organizaion }}/releases/{{ sentry_release_version }}/deploys/ \
+curl https://sentry.io/api/0/organizations/{{ sentry_organization }}/releases/ \
      -X POST \
-     -H 'Authorization: Bearer {{ sentry_token }}' \
+     -H 'Authorization: Bearer {{ sentry_token }} \
      -H 'Content-Type: application/json' \
-     -d '
-  {
-    "environment": "{{ sentry_environment }}",
-    "name": "{{ sentry_deploy_name }}"
-  }
-'
+     -d '{
+    "version": "$VERSION",
+    "projects": ["{{ sentry_project }}"]
+}'
+
+curl https://sentry.io/api/0/organizations/{{ sentry_organization }}/releases/$VERSION/deploys/ \
+     -X POST \
+     -H 'Authorization: Bearer {{ sentry_token }} \
+     -H 'Content-Type: application/json' \
+     -d '{
+    "environment": "{{ sentry_environment }}"
+   }'
