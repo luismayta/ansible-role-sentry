@@ -1,7 +1,7 @@
 ---
 # vars file for sentry.sentry
 
-_sentry_home_path: "/home/{{ user }}"
+_sentry_home_path: "{{ sentry_home_path }}"
 _sentry_file: "{{_sentry_home_path}}/sentry.sh"
 
 _sentry:
